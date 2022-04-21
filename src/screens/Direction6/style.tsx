@@ -10,4 +10,59 @@ export const styles = StyleSheet.create({
         backgroundColor: '#242530',
         borderRadius: 30,
     },
+    dataContainer:{
+        flexDirection: 'row',
+    },
+    dataBox:{
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor:'#181926',
+        borderRadius: 16,
+        alignItems: 'center',
+        marginHorizontal: 12,
+    },
+    scrollContainer:{
+        flex: 1,
+        borderRadius: 30,
+        backgroundColor: '#242530'
+    },
+    timeDateBox:{
+        flexDirection: 'row',
+        marginVertical: 10,
+        marginTop: 30,
+    },
+    dateTimeText:{
+        fontSize: 14,
+        color: '#3E3E3E',
+    },
+    iconBox:{
+        marginVertical: 13,
+        marginHorizontal: 15,
+    },
+    text:{
+        marginHorizontal: 13,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color:'#009899',
+        marginVertical: 10,
+    },
+    boxData:{
+        flex: 1,
+    },
+    fotterBox:{
+        marginHorizontal: 12,
+        backgroundColor:'#181926',
+        alignItems: 'center',
+        borderRadius: 16,
+        marginVertical: 10,
+    },
+    fotterText:{
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginVertical: 20,
+    },
+    buttonBox:{
+        marginVertical: 20,
+    },
 })

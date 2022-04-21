@@ -7,22 +7,28 @@ export const styles = StyleSheet.create({
   },
   allContainer: {
     flex: 1,
+    justifyContent: 'center',
     // alignItems: "center",
   },
-  imageInkass: {
-    width: Dimensions.get('window').width - 210,
-    height: Dimensions.get('window').width - 230,
-    marginVertical: 35,
-  },
+  // imageInkass: {
+  //   // width: Dimensions.get('window').width - 210,
+  //   // height: Dimensions.get('window').width - 230,
+  //   width: 130,
+  //   height: 130,
+  //   marginVertical: 35,
+  // },
   buttonBox: {
     borderWidth: 1,
     borderColor: 'rgba(0, 152, 153, 1)',
-    marginHorizontal: 20,
+    marginHorizontal: 10,
+    marginBottom: -60,
     alignItems: 'center',
     borderRadius: 15,
+    justifyContent:'center',
+    height: 55,
+
   },
   buttonText: {
-    marginVertical: 16,
     color: 'rgba(0, 152, 153, 1)',
     fontSize: 22,
     fontWeight: 'bold',
@@ -31,8 +37,15 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: '700',
+    marginTop: 50,
   },
   buttonContainer: {
     marginVertical: 60,
+  },
+  errorText:{
+    fontSize: 14,
+    color: 'red',
+    fontWeight: 'bold',
+    marginHorizontal: 15,
   },
 });

@@ -1,6 +1,7 @@
 export enum ROUTES {
   HOME_TABS = 'HOME_TABS',
   LOGIN = 'LOGIN',
+  HOME = 'HOME',
 
   // Tabs Navigation ......
   DIRECTION1 = 'DIRECTION1',
@@ -11,4 +12,6 @@ export enum ROUTES {
   DIRECTION6 = 'DIRECTION6',
   DIRECTION7 = 'DIRECTION7',
   DIRECTION1_STACK = 'DIRECTION1_STACK',
+  QRKOD = 'QRKOD',
+  VISITCLIENT = 'VISITCLIENT',
 }

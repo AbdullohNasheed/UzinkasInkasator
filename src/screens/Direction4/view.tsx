@@ -7,7 +7,7 @@ import {styles} from './style';
 const Direction4view = () => {
   return (
     <View style={styles.container}>
-      <HeaderComponent />
+      <HeaderComponent text="Визит к клиенту" />
       <View style={styles.DirictionContaienr}>
         <View style={{alignItems: 'center', marginVertical: 25}}>
           <Text style={{fontSize: 19, fontWeight: 'bold', color: '#fff'}}>

@@ -1,50 +1,58 @@
-import React from "react";
+import React from 'react';
 import {
-	Dimensions,
-	Image,
-	ImageBackground,
-	SafeAreaView,
-	StyleSheet,
-	Text,
-	TouchableOpacity,
-	View,
-} from "react-native";
-import { InnIcon, NotIcon, UserIcon } from "../../assets/icons/icons";
-import DefaultImageBackground from "../../components/general/DefaultImageBackground";
-import DefaultInput from "../../components/general/DefaultInput";
-import { useLoginScreenHook } from "./hooks";
-import { styles } from "./style";
-
-let { onTabsPress } = useLoginScreenHook();
+  ActivityIndicator,
+  Dimensions,
+  Image,
+  ImageBackground,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {InnIcon, NotIcon, UserIcon} from '../../assets/icons/icons';
+import DefaultImageBackground from '../../components/general/DefaultImageBackground';
+import DefaultInput from '../../components/general/DefaultInput';
+import {useLoginScreenData} from './hooks';
+import {styles} from './style';
 const LoginView = () => {
-	return (
-		<View style={styles.Container}>
-			<DefaultImageBackground>
-				<SafeAreaView style={styles.allContainer}>
-					<View style={{ alignItems: "center",}}>
-						<Image
-							source={require("../../assets/image/inkass1.png")}
-							style={styles.imageInkass}
-						/>
-						<Text style={styles.text}>Авторизация</Text>
-					</View>
-					<View style={styles.buttonContainer}>
-						<DefaultInput
-							icon={UserIcon}
-							placeholder={"Логин"}
-						/>
-						<DefaultInput icon={InnIcon} placeholder={"Пароль"} />
-					</View>
-					<TouchableOpacity
-						onPress={onTabsPress}
-						style={styles.buttonBox}
-					>
-						<Text style={styles.buttonText}>Войти</Text>
-					</TouchableOpacity>
-				</SafeAreaView>
-			</DefaultImageBackground>
-		</View>
-	);
+  let {onRegisterPress, handleChange, state, loading, error} =
+    useLoginScreenData();
+  return (
+    <View style={styles.Container}>
+      <DefaultImageBackground>
+        <SafeAreaView style={styles.allContainer}>
+          <View style={{alignItems: 'center'}}>
+            <Text style={styles.text}>Авторизация</Text>
+          </View>
+          <View style={styles.buttonContainer}>
+            <DefaultInput
+              icon={UserIcon}
+              placeholder={'Логин'}
+              onChange={handleChange('name')}
+              hasError={!!error}
+            />
+            {error && <Text style={styles.errorText}>{error.message}</Text>}
+            <DefaultInput
+              icon={InnIcon}
+              placeholder="password"
+              onChange={handleChange('password')}
+              value={state.password}
+              hasError={!!error}
+            />
+            {error && <Text style={styles.errorText}>{error.message}</Text>}
+          </View>
+          <TouchableOpacity onPress={onRegisterPress} style={styles.buttonBox}>
+            {loading ? (
+              <ActivityIndicator size={'large'} color={'white'} />
+            ) : (
+              <Text style={styles.buttonText}>Войти</Text>
+            )}
+          </TouchableOpacity>
+        </SafeAreaView>
+      </DefaultImageBackground>
+    </View>
+  );
 };
 
 export default LoginView;

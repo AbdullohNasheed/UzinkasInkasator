@@ -24,13 +24,12 @@ export default DefaultImageBackground;
 const styles = StyleSheet.create({
 	imageBackground: {
 		flex: 1,
-		// alignItems: "center",
-		// justifyContent: "center",
-		backgroundColor: "rgba(24, 25, 38, 1)",
+        backgroundColor: '#181926',
+
 	},
 	image: {
-		width: Dimensions.get("window").width - 100,
-		height: Dimensions.get("window").width - 60,
+		width: Dimensions.get("window").width - 115,
+		height: Dimensions.get("window").width - 75,
 		top: undefined,
 		bottom: undefined,
 		left: undefined,

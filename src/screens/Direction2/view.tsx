@@ -4,11 +4,11 @@ import {BankIcon, UserIcon, UserIconn} from '../../assets/icons/icons';
 import HeaderComponent from '../../components/header/Header';
 import { useDirection2ScreenHook } from './hooks';
 import {styles} from './style';
-let {onDirection3Press, onDirection4Press} = useDirection2ScreenHook();
 const Direction2view = () => {
+  let {onDirection3Press, onDirection4Press} = useDirection2ScreenHook();
   return (
     <View style={styles.container}>
-      <HeaderComponent text={'Направление 15'} />
+      <HeaderComponent hasImage={false} hasMenu={false} text={'Направление 15'} />
       <View style={styles.direction2Container}>
         <View style={{alignItems: 'center', marginVertical: 30}}>
           <Text style={styles.headerText}>Мирабадский район</Text>

@@ -1,21 +1,19 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React, { PropsWithChildren } from 'react';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { useNavigation } from '@react-navigation/native';
+import React, {PropsWithChildren} from 'react';
 import {
-	Image,
-	Platform,
-	StyleSheet,
-	TouchableOpacity,
-	View
+  Image,
+  Platform,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  SafeAreaView,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Direction6Screen } from '../screens/Direction6';
-import { Direction7Screen } from '../screens/Direction7';
-import Direction1Stack from './HomeStack';
-import { ROUTES } from './ROUTES';
+import DirectionStack from '../screens/Direction1/hooks';
+import { Direction2Screen } from '../screens/Direction2';
+import HomeStack from './HomeStack';
 
-const img1 = require('../assets/image/Home.png');
-const img2 = require('../assets/image/Note.png');
-const img3 = require('../assets/image/user.png');
+const img2 = require('../assets/image/Home.png');
 
 const Tab = createBottomTabNavigator();
 interface CustomTabBarBottonProps {
@@ -27,6 +25,7 @@ const CustomTabBarBotton = ({
   onPress,
 }: PropsWithChildren<CustomTabBarBottonProps>) => (
   <TouchableOpacity
+    activeOpacity={0.7}
     style={{
       top: Platform.OS === 'android' ? -35 : -15,
       justifyContent: 'center',
@@ -63,39 +62,12 @@ const Tabs = () => {
             borderTopRightRadius: 30,
             backgroundColor: '#181926',
             borderTopWidth: 0,
+            alignItems: 'center',
           },
         }}>
         <Tab.Screen
-          name={ROUTES.DIRECTION1_STACK}
-          component={Direction1Stack}
-          options={{
-            tabBarIcon: ({focused}) => (
-              <View
-                style={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  top: Platform.OS === 'android' ? 0 : 25,
-                }}>
-                <Image
-                  source={img1}
-                  resizeMode="contain"
-                  style={{
-                    width: 40,
-                    height: 40,
-                    tintColor: focused
-                      ? 'rgba(0, 152, 153, 1)'
-                      : 'rgba(182, 182, 182, 1)',
-                  }}
-                />
-              </View>
-            ),
-            tabBarShowLabel: false,
-          }}
-        />
-
-        <Tab.Screen
-          name="Screen"
-          component={Direction7Screen}
+          name="Home"
+          component={DirectionStack}
           options={{
             tabBarIcon: ({focused}) => (
               <Image
@@ -105,38 +77,11 @@ const Tabs = () => {
                   width: 35,
                   height: 35,
                   tintColor: focused ? '#fff' : '#000',
+                  // backgroundColor: 'rgba(0, 152, 153, 1)',
                 }}
               />
             ),
             tabBarButton: props => <CustomTabBarBotton {...props} />,
-            tabBarShowLabel: false,
-          }}
-        />
-
-        <Tab.Screen
-          name="New"
-          component={Direction6Screen}
-          options={{
-            tabBarIcon: ({focused}) => (
-              <View
-                style={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                <Image
-                  source={img3}
-                  resizeMode="contain"
-                  style={{
-                    width: 40,
-                    height: 40,
-                    tintColor: focused
-                      ? 'rgba(0, 152, 153, 1)'
-                      : 'rgba(182, 182, 182, 1)',
-                    top: Platform.OS === 'android' ? 0 : 25,
-                  }}
-                />
-              </View>
-            ),
             tabBarShowLabel: false,
           }}
         />

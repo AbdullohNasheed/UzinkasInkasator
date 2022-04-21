@@ -16,7 +16,7 @@ const Direction7view = () => {
             <Text style={{fontSize: 20, color: '#fff', fontWeight: 'bold', marginVertical: 50,}}>Вы не активированы</Text>
           </View>
           <View style={{}}>
-            <DefaultButton text={'Вы не активированы'}/>
+            <DefaultButton text={'Назад'}/>
           </View>
         </View>
       </View>

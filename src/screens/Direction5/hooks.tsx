@@ -3,8 +3,8 @@ import React from "react";
 import { ROUTES } from "../../navigation/ROUTES";
 export const useDirection5ScreenHook = () => {
     let navigation = useNavigation();
-    let onDirection6Press = () => {
-      navigation.navigate(ROUTES.DIRECTION6);
+    let onQrkodPress = () => {
+      navigation.navigate(ROUTES.QRKOD);
     };
     let onDirection4Press = () => {
         navigation.navigate(ROUTES.DIRECTION6);
@@ -12,5 +12,5 @@ export const useDirection5ScreenHook = () => {
     // let onDirection4Press = () => {
     //     navigation.navigate(ROUTES.DIRECTION);
     //   };
-    return {onDirection6Press, onDirection4Press};
+    return {onQrkodPress, onDirection4Press};
   };
