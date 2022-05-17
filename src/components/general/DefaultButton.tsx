@@ -11,10 +11,10 @@ import {
 } from 'react-native';
 
 export interface DefaultButtonProps {
-  text: string;
-  onPress: any;
-  style: StyleProp<ViewStyle>;
-  textStyle: StyleProp<TextStyle>;
+  text?: string;
+  onPress?: any;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
 }
 
 const DefaultButton = ({
@@ -37,6 +37,7 @@ export default DefaultButton;
 
 const styles = StyleSheet.create({
 	buttonContainer:{
+    paddingVertical: 13,
     marginHorizontal: 15,
     borderRadius: 13,
     alignItems: 'center',
@@ -46,7 +47,6 @@ const styles = StyleSheet.create({
     marginVertical: 15,
 	},
 	buttonText:{
-    marginVertical: 18,
     fontSize: 18,
     color: 'rgba(0, 152, 153, 1)',
     fontWeight: 'bold',

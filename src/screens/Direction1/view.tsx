@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
-import HeaderComponent from '../../components/header/Header';
 import {styles} from './style';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {ArrowDown, ArrowUp, LoadingIcon} from '../../assets/icons/icons';
@@ -8,18 +7,18 @@ import {DROPDOWN_TYPES, useDirectionScreenHook} from './hooks';
 import HeaderComponentOne from '../../components/header/HeaderOne';
 
 const Direction1view = () => {
-  let {HomePress, state, changeDropdown} = useDirectionScreenHook();
+  let {HomePress, state, changeDropdown, active} = useDirectionScreenHook();
 
   return (
     <View style={styles.container}>
-      <HeaderComponentOne text={'Направление 15'} />
+      <HeaderComponentOne text={`Направление `} />
       <View style={styles.scrollContainer}>
         <ScrollView style={styles.dropDown}>
-          <View style={{marginVertical: 20}}>
-            <View style={{marginHorizontal: 20}}>
+          <View style={{marginVertical: 20, paddingBottom: 130}}>
+            <View style={{}}>
               <View style={styles.dropDownBox}>
                 <DropDownPicker
-                  placeholder="Выбрать город"
+                  placeholder="не выбрано"
                   open={state[DROPDOWN_TYPES.CITY].visible}
                   value={state[DROPDOWN_TYPES.CITY].value}
                   items={state[DROPDOWN_TYPES.CITY].items}
@@ -50,7 +49,7 @@ const Direction1view = () => {
               </View>
               <View style={styles.dropDownBoxTwo}>
                 <DropDownPicker
-                  placeholder="Выбрать район"
+                  placeholder="не выбрано"
                   open={state.region.visible}
                   value={state.region.value}
                   items={state.region.items}
@@ -81,7 +80,7 @@ const Direction1view = () => {
               </View>
               <View style={styles.dropDownBoxThree}>
                 <DropDownPicker
-                  placeholder="Выбрать район"
+                  placeholder="не выбрано"
                   open={state[DROPDOWN_TYPES.ROUTE].visible}
                   value={state[DROPDOWN_TYPES.ROUTE].value}
                   items={state[DROPDOWN_TYPES.ROUTE].items}
@@ -110,19 +109,17 @@ const Direction1view = () => {
                   }}
                 />
               </View>
-            </View>
-            <TouchableOpacity onPress={HomePress} style={styles.loading}>
-              <View style={styles.buttonContainer}>
-                <View style={styles.button}>
-                  <LoadingIcon />
-                </View>
-                <View style={styles.buttonBox}>
-                  <Text style={styles.buttonText}>
-                    Список сегодняшних клиентов
+              <View style={{marginTop: 50}}>
+                <TouchableOpacity
+                  disabled={!active}
+                  onPress={HomePress}
+                  style={active ? styles.style1 : styles.style2}>
+                  <Text style={active ? styles.style1Text : styles.style2Text}>
+                    Список клиентов
                   </Text>
-                </View>
+                </TouchableOpacity>
               </View>
-            </TouchableOpacity>
+            </View>
           </View>
         </ScrollView>
       </View>

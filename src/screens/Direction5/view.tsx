@@ -6,23 +6,56 @@ import HeaderComponent from '../../components/header/Header';
 import {useDirection5ScreenHook} from './hooks';
 import {styles} from './style';
 const Direction5view = () => {
-  let {onDirection4Press, onQrkodPress} = useDirection5ScreenHook();
+  let {onDirection4Press, onQrkodPress, order} = useDirection5ScreenHook();
   return (
     <View style={styles.container}>
       <HeaderComponent text="Визит к клиенту" />
       <View style={styles.DirictionContaienr}>
         <View style={{alignItems: 'center', marginVertical: 30}}>
           <Text style={{fontSize: 18, fontWeight: 'bold', color: '#fff'}}>
-            ЯТТ ИСАЕВ
+            Название компании:
+          </Text>
+          <Text
+            style={{
+              fontSize: 18,
+              fontWeight: 'bold',
+              color: '#009899',
+              marginTop: 8,
+            }}>
+            {order.name}
           </Text>
         </View>
         <ScrollView>
-          <View style={{alignItems: 'center', marginVertical: 40}}>
-            <Text style={{fontSize: 40, fontWeight: 'bold', color: '#A92F2F'}}>
-              1.250.000
+          <View
+            style={{
+              // marginVertical: 40,
+              flexDirection: 'row',
+              justifyContent: 'center',
+            }}>
+            <Text
+              style={{
+                fontSize: 40,
+                fontWeight: 'bold',
+                color: '#A92F2F',
+              }}>
+              {order.debt}
+            </Text>
+            <Text
+              style={{
+                marginLeft: 6,
+                fontSize: 40,
+                fontWeight: 'bold',
+                color: '#A92F2F',
+              }}>
+              сум
             </Text>
           </View>
-          <View style={{marginTop: 80}}>
+          <View style={{alignItems: 'center', marginVertical: 10,}}>
+            <Text style={{fontSize: 16, fontWeight: '400', color: '#616161'}}>
+              Посмотреть историю долга
+            </Text>
+          </View>
+          <View style={{marginTop: 50}}>
             <DefaultButton
               onPress={onDirection4Press}
               textStyle={{color: '#fff'}}

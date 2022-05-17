@@ -1,30 +1,27 @@
 import React, {useState} from 'react';
-import {View, Text, Platform, Button, TouchableOpacity} from 'react-native';
-import {ScrollView, TextInput} from 'react-native-gesture-handler';
+import {
+  View,
+  Text,
+  Platform,
+  Button,
+  TouchableOpacity,
+  ActivityIndicator,
+} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 import {
   ClockIcon,
-  Icon,
   KalendarIcon,
   KalendarMiniIcon,
-  PencelIcon,
 } from '../../assets/icons/icons';
 import DefaultButton from '../../components/general/DefaultButton';
 import DefaultInput from '../../components/general/DefaultInput';
 import HeaderComponent from '../../components/header/Header';
-import {useDirection6ScreenHook} from './hooks';
 import {styles} from './style';
-import DateTimePicker from '@react-native-community/datetimepicker';
-import DatePicker from 'react-native-date-picker';
+import {useCashAcceptanceScreenHook} from './hooks';
 
-const Direction6view = () => {
-  let {onCashPress, currentTime, currentData, order} =
-    useDirection6ScreenHook();
-  // console.log(order);
-
-  const [date, setDate] = useState(new Date());
-  const [open, setOpen] = useState(false);
-  const [time, setTime] = useState(new Date());
-  const [openn, setOpenn] = useState(false);
+const CashAcceptance = () => {
+  let {onDirection3Press, loading, currentTime, currentData, order} =
+    useCashAcceptanceScreenHook();
   return (
     <View style={styles.container}>
       <HeaderComponent text={'Визит к клиенту'} />
@@ -33,21 +30,17 @@ const Direction6view = () => {
           <View style={styles.timeDateBox}>
             <View style={styles.boxData}>
               <Text style={styles.text}>День</Text>
-              <TouchableOpacity
-                style={styles.dataBox}
-                onPress={() => setOpen(true)}>
+              <View style={styles.dataBox}>
                 <KalendarMiniIcon style={styles.iconBox} />
                 <Text style={styles.dateTimeText}>{currentData}</Text>
-              </TouchableOpacity>
+              </View>
             </View>
             <View style={styles.boxData}>
               <Text style={styles.text}>Время</Text>
-              <TouchableOpacity
-                style={styles.dataBox}
-                onPress={() => setOpenn(true)}>
+              <View style={styles.dataBox}>
                 <ClockIcon style={styles.iconBox} />
                 <Text style={styles.dateTimeText}>{currentTime}</Text>
-              </TouchableOpacity>
+              </View>
             </View>
           </View>
           <Text style={styles.textInput}>Организация</Text>
@@ -56,31 +49,29 @@ const Direction6view = () => {
           </View>
           <Text style={styles.textInput}>Сумма</Text>
           <View style={styles.fotterBox}>
-            <TextInput>
-              <Text style={styles.fotterText}>{order.debt}</Text>
-            </TextInput>
-            <PencelIcon />
+            <Text style={styles.fotterText}>{order?.debt}</Text>
           </View>
           <Text style={styles.textInput}>Номер мешка</Text>
           <View style={styles.fotterBox}>
-            <TextInput>
-              <Text style={styles.fotterText}>{order.number}</Text>
-            </TextInput>
-            <PencelIcon />
+            <Text style={styles.fotterText}>{order.number}</Text>
           </View>
           <Text style={styles.textInput}>Реквезиты банка</Text>
           <View style={styles.fotterBox}>
             <Text style={styles.fotterText}>{order?.bank?.name}</Text>
           </View>
           <View style={styles.buttonBox}>
-            <DefaultButton
-              onPress={onCashPress}
-              textStyle={{color: '#fff'}}
-              text="Принять"
-            />
+            <TouchableOpacity
+              onPress={onDirection3Press}
+              style={styles.buttonContainer}>
+              {loading ? (
+                <ActivityIndicator size={'large'} color={'white'} />
+              ) : (
+                <Text style={styles.buttonText}>Подтвердить</Text>
+              )}
+            </TouchableOpacity>
           </View>
         </View>
-        <DatePicker
+        {/* <DatePicker
           modal
           mode="date"
           open={open}
@@ -92,8 +83,8 @@ const Direction6view = () => {
           onCancel={() => {
             setOpen(false);
           }}
-        />
-        <DatePicker
+        /> */}
+        {/* <DatePicker
           modal
           mode="time"
           open={openn}
@@ -105,10 +96,10 @@ const Direction6view = () => {
           onCancel={() => {
             setOpenn(false);
           }}
-        />
+        /> */}
       </ScrollView>
     </View>
   );
 };
 
-export default Direction6view;
+export default CashAcceptance;

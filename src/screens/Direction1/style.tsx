@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#242531',
     elevation: 10,
     marginVertical: 30,
+    top: 100,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -52,13 +53,42 @@ export const styles = StyleSheet.create({
   dropDownBox: {
     marginTop: 10,
     zIndex: 3000,
+    marginHorizontal: 20,
   },
   dropDownBoxTwo: {
     zIndex: 2000,
     marginTop: 20,
+    marginHorizontal: 20,
   },
   dropDownBoxThree: {
     zIndex: 1,
     marginTop: 20,
+    marginHorizontal: 20,
+  },
+  style1: {
+    backgroundColor: '#009899',
+    marginHorizontal: 20,
+    paddingVertical: 15,
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+  style2: {
+    backgroundColor: '#1a333d',
+    borderWidth: 1,
+    borderColor: '#009899',
+    marginHorizontal: 20,
+    paddingVertical: 15,
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+  style1Text: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  style2Text: {
+    color: '#3f545d',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });

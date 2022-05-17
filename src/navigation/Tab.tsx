@@ -1,5 +1,5 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import React, {PropsWithChildren} from 'react';
 import {
   Image,
@@ -10,7 +10,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import DirectionStack from '../screens/Direction1/hooks';
-import { Direction2Screen } from '../screens/Direction2';
+import {Direction2Screen} from '../screens/Direction2';
 import HomeStack from './HomeStack';
 
 const img2 = require('../assets/image/Home.png');
@@ -35,9 +35,9 @@ const CustomTabBarBotton = ({
     onPress={onPress}>
     <View
       style={{
-        width: Platform.OS === 'android' ? 80 : 93,
-        height: Platform.OS === 'android' ? 80 : 93,
-        borderRadius: 80,
+        width: Platform.OS === 'android' ? 70 : 70,
+        height: Platform.OS === 'android' ? 70 : 70,
+        borderRadius: 70,
         backgroundColor: 'rgba(0, 152, 153, 1)',
         elevation: 5,
         shadowColor: 'rgba(0, 152, 153, 1)',
@@ -57,7 +57,7 @@ const Tabs = () => {
           headerShown: false,
           tabBarStyle: {
             position: 'absolute',
-            height: 70,
+            height: 60,
             borderTopLeftRadius: 30,
             borderTopRightRadius: 30,
             backgroundColor: '#181926',
@@ -74,15 +74,14 @@ const Tabs = () => {
                 source={img2}
                 resizeMode="contain"
                 style={{
-                  width: 35,
-                  height: 35,
-                  tintColor: focused ? '#fff' : '#000',
-                  // backgroundColor: 'rgba(0, 152, 153, 1)',
+                  width: 30,
+                  height: 30,
                 }}
               />
             ),
-            tabBarButton: props => <CustomTabBarBotton {...props} />,
             tabBarShowLabel: false,
+            tabBarHideOnKeyboard: true,
+            tabBarButton: props => <CustomTabBarBotton {...props} />,
           }}
         />
       </Tab.Navigator>

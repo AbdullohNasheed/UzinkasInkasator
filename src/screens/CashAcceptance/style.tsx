@@ -52,16 +52,7 @@ export const styles = StyleSheet.create({
   },
   fotterBox: {
     height: 60,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 15,
-    justifyContent: 'space-between',
-    marginHorizontal: 12,
-    backgroundColor: '#181926',
-    borderRadius: 16,
-    marginVertical: 10,
-  },
-  fotterBoxx: {
+    justifyContent: 'center',
     marginHorizontal: 12,
     backgroundColor: '#181926',
     alignItems: 'center',
@@ -75,6 +66,21 @@ export const styles = StyleSheet.create({
   },
   buttonBox: {
     marginVertical: 20,
+  },
+  buttonText: {
+    fontSize: 18,
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  buttonContainer: {
+    height: 55,
+    marginHorizontal: 15,
+    borderRadius: 13,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1.5,
+    borderColor: ' rgba(0, 152, 153, 1)',
+    marginVertical: 15,
   },
   textInput: {
     fontSize: 16,

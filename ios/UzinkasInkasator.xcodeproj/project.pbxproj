@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2A834CB8D0BA23F9312A8186 /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE023294C090A31F8E8B8036 /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		FE6F6ED87A888278154C46D8 /* libPods-UzinkasInkasator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AC6891362BB29B7F5E6A42 /* libPods-UzinkasInkasator.a */; };
+		957C71A8EDCFAA74322215D7 /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4557B756FAB9F31BCAD8DB /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a */; };
+		DA1C1A91D9F1920D894F4FD2 /* libPods-UzinkasInkasator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BD7D52413E5E4D67FB487A /* libPods-UzinkasInkasator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,19 +30,19 @@
 		00E356EE1AD99517003FC87E /* UzinkasInkasatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UzinkasInkasatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* UzinkasInkasatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UzinkasInkasatorTests.m; sourceTree = "<group>"; };
-		01501A9417E6FF6E70C2F35F /* Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig"; path = "Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* UzinkasInkasator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UzinkasInkasator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = UzinkasInkasator/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = UzinkasInkasator/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = UzinkasInkasator/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = UzinkasInkasator/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = UzinkasInkasator/main.m; sourceTree = "<group>"; };
-		2D55606E51AC0809B9649CF6 /* Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig"; path = "Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig"; sourceTree = "<group>"; };
-		62AC6891362BB29B7F5E6A42 /* libPods-UzinkasInkasator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UzinkasInkasator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69D7021502858CF7850CE3B7 /* Pods-UzinkasInkasator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasInkasator.release.xcconfig"; path = "Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator.release.xcconfig"; sourceTree = "<group>"; };
+		74BD7D52413E5E4D67FB487A /* libPods-UzinkasInkasator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UzinkasInkasator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BD86C950943FFCCD290F835 /* Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig"; path = "Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		7F8DDEA25BE7061C99EC8E84 /* Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig"; path = "Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UzinkasInkasator/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		93F0C7F4D6F950D00322AFE6 /* Pods-UzinkasInkasator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasInkasator.debug.xcconfig"; path = "Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator.debug.xcconfig"; sourceTree = "<group>"; };
-		B9BB6E591CEFACE0A44FEAE0 /* Pods-UzinkasInkasator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasInkasator.release.xcconfig"; path = "Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator.release.xcconfig"; sourceTree = "<group>"; };
-		CE023294C090A31F8E8B8036 /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UzinkasInkasator-UzinkasInkasatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		879176ABE84367545BD42133 /* Pods-UzinkasInkasator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasInkasator.debug.xcconfig"; path = "Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator.debug.xcconfig"; sourceTree = "<group>"; };
+		BC4557B756FAB9F31BCAD8DB /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UzinkasInkasator-UzinkasInkasatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A834CB8D0BA23F9312A8186 /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a in Frameworks */,
+				957C71A8EDCFAA74322215D7 /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE6F6ED87A888278154C46D8 /* libPods-UzinkasInkasator.a in Frameworks */,
+				DA1C1A91D9F1920D894F4FD2 /* libPods-UzinkasInkasator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				62AC6891362BB29B7F5E6A42 /* libPods-UzinkasInkasator.a */,
-				CE023294C090A31F8E8B8036 /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a */,
+				74BD7D52413E5E4D67FB487A /* libPods-UzinkasInkasator.a */,
+				BC4557B756FAB9F31BCAD8DB /* libPods-UzinkasInkasator-UzinkasInkasatorTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,12 +140,11 @@
 		FCF9098215E50B948EFDC03F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				93F0C7F4D6F950D00322AFE6 /* Pods-UzinkasInkasator.debug.xcconfig */,
-				B9BB6E591CEFACE0A44FEAE0 /* Pods-UzinkasInkasator.release.xcconfig */,
-				01501A9417E6FF6E70C2F35F /* Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig */,
-				2D55606E51AC0809B9649CF6 /* Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig */,
+				879176ABE84367545BD42133 /* Pods-UzinkasInkasator.debug.xcconfig */,
+				69D7021502858CF7850CE3B7 /* Pods-UzinkasInkasator.release.xcconfig */,
+				7F8DDEA25BE7061C99EC8E84 /* Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig */,
+				7BD86C950943FFCCD290F835 /* Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -156,12 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "UzinkasInkasatorTests" */;
 			buildPhases = (
-				D03148141CCAC2F99AD53631 /* [CP] Check Pods Manifest.lock */,
+				9B54C3A1D782C6AA5FF47049 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				D4D798A244CD0494E730A68D /* [CP] Embed Pods Frameworks */,
-				2F4DD83BE59E20DB91BC0B05 /* [CP] Copy Pods Resources */,
+				9CEE80FBF4B0C033CCF6630A /* [CP] Embed Pods Frameworks */,
+				203EBDC32747A61C2C6E4437 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,14 +176,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "UzinkasInkasator" */;
 			buildPhases = (
-				AAEBD73103CC34811E06ABDD /* [CP] Check Pods Manifest.lock */,
+				0AC3A91A1AD69C352DFA7B92 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				BC74D74FAA642C6B75EACBE2 /* [CP] Embed Pods Frameworks */,
-				A8A99E1CAC9AF1F57F69A471 /* [CP] Copy Pods Resources */,
+				0986558F75EB0CEC1275CDC8 /* [CP] Embed Pods Frameworks */,
+				D44887B6B8D4F108404DCD4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,41 +264,24 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		2F4DD83BE59E20DB91BC0B05 /* [CP] Copy Pods Resources */ = {
+		0986558F75EB0CEC1275CDC8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A8A99E1CAC9AF1F57F69A471 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AAEBD73103CC34811E06ABDD /* [CP] Check Pods Manifest.lock */ = {
+		0AC3A91A1AD69C352DFA7B92 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,24 +303,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BC74D74FAA642C6B75EACBE2 /* [CP] Embed Pods Frameworks */ = {
+		203EBDC32747A61C2C6E4437 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D03148141CCAC2F99AD53631 /* [CP] Check Pods Manifest.lock */ = {
+		9B54C3A1D782C6AA5FF47049 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,7 +342,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D4D798A244CD0494E730A68D /* [CP] Embed Pods Frameworks */ = {
+		9CEE80FBF4B0C033CCF6630A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,6 +357,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator-UzinkasInkasatorTests/Pods-UzinkasInkasator-UzinkasInkasatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D44887B6B8D4F108404DCD4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasInkasator/Pods-UzinkasInkasator-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -429,7 +428,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01501A9417E6FF6E70C2F35F /* Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig */;
+			baseConfigurationReference = 7F8DDEA25BE7061C99EC8E84 /* Pods-UzinkasInkasator-UzinkasInkasatorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -456,7 +455,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D55606E51AC0809B9649CF6 /* Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig */;
+			baseConfigurationReference = 7BD86C950943FFCCD290F835 /* Pods-UzinkasInkasator-UzinkasInkasatorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -480,11 +479,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93F0C7F4D6F950D00322AFE6 /* Pods-UzinkasInkasator.debug.xcconfig */;
+			baseConfigurationReference = 879176ABE84367545BD42133 /* Pods-UzinkasInkasator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93K92R8X54;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = UzinkasInkasator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -506,11 +506,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9BB6E591CEFACE0A44FEAE0 /* Pods-UzinkasInkasator.release.xcconfig */;
+			baseConfigurationReference = 69D7021502858CF7850CE3B7 /* Pods-UzinkasInkasator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93K92R8X54;
 				INFOPLIST_FILE = UzinkasInkasator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

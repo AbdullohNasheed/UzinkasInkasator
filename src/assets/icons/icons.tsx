@@ -607,7 +607,7 @@ export function LocationColorIcon(props: SvgProps) {
     </Svg>
   );
 }
-export function LogoAutIcon(props:SvgProps) {
+export function LogoAutIcon(props: SvgProps) {
   return (
     <Svg
       width={30}
@@ -629,6 +629,48 @@ export function LogoAutIcon(props:SvgProps) {
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+export function Xicon(props: SvgProps) {
+  return (
+    <Svg
+      width={25}
+      height={25}
+      viewBox="0 0 25 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        transform="scale(1.00613 .99383) rotate(45 -2.6 1.614)"
+        stroke="rgba(0, 152, 153, 1)"
+        strokeWidth={3}
+        strokeLinecap="round"
+        d="M1.5 -1.5L30.5 -1.5"
+      />
+      <Path
+        transform="matrix(-.71144 .70275 -.71144 -.70275 22.984 0)"
+        stroke="rgba(0, 152, 153, 1)"
+        strokeWidth={3}
+        strokeLinecap="round"
+        d="M1.5 -1.5L30.5 -1.5"
+      />
+    </Svg>
+  );
+}
+export function PencelIcon(props: SvgProps) {
+  return (
+    <Svg
+      width={17}
+      height={17}
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M16.434 4.16l-2.935-2.95a1.035 1.035 0 00-1.46 0L1.634 11.6l-.95 4.1a1.03 1.03 0 001 1.25c.071.007.143.007.215 0L6.044 16l10.39-10.38a1.035 1.035 0 000-1.46zM5.544 15.1l-3.885.815.885-3.81 7.785-7.755 3 3-7.785 7.75zm8.455-8.475l-3-3 1.74-1.73 2.95 3-1.69 1.73z"
+        fill="#fff"
       />
     </Svg>
   );

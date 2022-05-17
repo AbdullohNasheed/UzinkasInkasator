@@ -2,10 +2,14 @@ import {useNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect} from 'react';
 import {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {Direction1Screen} from '.';
 import {requests} from '../../api/requests';
 import {ROUTES} from '../../navigation/ROUTES';
+import {setRoute} from '../../store/slices/routeSlice';
 import {userLoggedOut} from '../../store/slices/userSlice';
+import {CashAcceptanceScreen} from '../CashAcceptance';
+import CashAcceptance from '../CashAcceptance/view';
 import {Direction2Screen} from '../Direction2';
 import {Direction3Screen} from '../Direction3';
 import {Direction4Screen} from '../Direction4';
@@ -27,8 +31,32 @@ export interface DropdownState {
 
 export const useDirectionScreenHook = () => {
   const navigation = useNavigation();
+  const [active, setActive] = useState(false);
+  const dispatch = useDispatch();
+
   let HomePress = () => {
-    navigation.navigate(ROUTES.DIRECTION2);
+    const routeNumber = state.route.items.find(
+      e => state.route.value === e.value,
+    ).label;
+    const regionName = state.region.items.find(
+      e => state.region.value === e.value,
+    ).label;
+    dispatch(
+      setRoute({
+        city: state.city.value,
+        region: state.region.value,
+        route: state.route.value,
+        regionName,
+        routeNumber,
+      }),
+    );
+    navigation.navigate(ROUTES.DIRECTION2, {
+      city: state.city.value,
+      region: state.region.value,
+      route: state.route.value,
+      regionName,
+      routeNumber,
+    });
   };
   const [state, setState] = useState<{
     [key in DROPDOWN_TYPES]: DropdownState;
@@ -52,20 +80,20 @@ export const useDirectionScreenHook = () => {
   const changeDropdown =
     (dropdownName: DROPDOWN_TYPES, key: keyof DropdownState) =>
     (val: boolean | any) => {
-      if (dropdownName === DROPDOWN_TYPES.CITY && key === 'value') {
-        setState(e => ({
-          ...e,
-          [dropdownName]: {
-            ...e[dropdownName],
-            [key]: typeof val === 'function' ? val() : val,
-          },
-          region: {
-            ...e.region,
-            items: e?.city?.items?.find(el => el.id == val())?.regions,
-          },
-        }));
-        return;
-      }
+      // if (dropdownName === DROPDOWN_TYPES.CITY && key === 'value') {
+      //   setState(e => ({
+      //     ...e,
+      //     [dropdownName]: {
+      //       ...e[dropdownName],
+      //       [key]: typeof val === 'function' ? val() : val,
+      //     },
+      //     region: {
+      //       ...e.region,
+      //       items: e?.city?.items?.find(el => el.id == val())?.regions,
+      //     },
+      //   }));
+      //   return;
+      // }
       setState(e => ({
         ...e,
         [dropdownName]: {
@@ -74,6 +102,33 @@ export const useDirectionScreenHook = () => {
         },
       }));
     };
+
+  useEffect(() => {
+    if (!!state.city.value) {
+      console.log(state.city.value);
+      console.log(state.city.items.find(el => el.value == state.city.value));
+
+      setState(e => {
+        return {
+          ...e,
+          region: {
+            ...e.region,
+            items: e.city.items
+              .find(el => el.value == state.city.value)
+              .regions.map(({id: value, name: label}) => ({label, value})),
+          },
+        };
+      });
+    }
+  }, [state.city.value]);
+
+  useEffect(() => {
+    if (state.city.value && state.region.value && state.route.value) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [state.city.value, state.region.value, state.route.value]);
 
   const effect = async () => {
     try {
@@ -99,16 +154,14 @@ export const useDirectionScreenHook = () => {
       });
     } catch (error) {}
   };
+  const onLogoutPress = () => {
+    dispatch(userLoggedOut());
+  };
 
   useEffect(() => {
     effect();
   }, []);
-
-  useEffect(() => {
-    console.log('UPDATING');
-  });
-
-  return {changeDropdown, HomePress, state};
+  return {changeDropdown, HomePress, state, active, onLogoutPress};
 };
 
 let Stack = createNativeStackNavigator();
@@ -126,6 +179,7 @@ export default function DirectionStack() {
       <Stack.Screen name={ROUTES.DIRECTION5} component={Direction5Screen} />
       <Stack.Screen name={ROUTES.DIRECTION6} component={Direction6Screen} />
       <Stack.Screen name={ROUTES.DIRECTION7} component={Direction7Screen} />
+      <Stack.Screen name={ROUTES.CASH} component={CashAcceptanceScreen} />
     </Stack.Navigator>
   );
 }

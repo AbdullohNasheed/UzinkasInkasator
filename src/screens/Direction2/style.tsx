@@ -16,18 +16,20 @@ export const styles = StyleSheet.create({
     color: '#fff',
   },
   box: {
+    height: 120,
+    justifyContent: 'center',
     marginHorizontal: 20,
-    backgroundColor: '#242531',
+    backgroundColor: '#2b2c36',
     borderRadius: 12,
     marginVertical: 15,
     shadowColor: '#000',
     shadowOffset: {
-      width: 0,
-      height: 0,
+      width: 2,
+      height: -2,
     },
     shadowOpacity: 0.41,
     shadowRadius: 9.11,
 
-    elevation: 14,
+    elevation: 20,
   },
 });

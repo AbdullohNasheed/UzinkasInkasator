@@ -9,6 +9,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {LoadingIcon, LogoAutIcon, MenuIcon} from '../../assets/icons/icons';
+import {useDirectionScreenHook} from '../../screens/Direction1/hooks';
 
 export interface HeaderComponentProps {
   text: string;
@@ -16,9 +17,10 @@ export interface HeaderComponentProps {
 }
 
 const HeaderComponentOne = ({text}: HeaderComponentProps) => {
+  const {onLogoutPress} = useDirectionScreenHook();
   return (
     <View style={styles.headerContainer}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onLogoutPress}>
         <LogoAutIcon />
       </TouchableOpacity>
       <Text style={styles.text}>{text}</Text>

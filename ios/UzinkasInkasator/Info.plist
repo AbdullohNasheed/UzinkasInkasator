@@ -4,15 +4,17 @@
 <dict>
   <!-- Required with iOS 10 and higher -->
   <key>NSCameraUsageDescription</key>
-  <string>Your message to user when the camera is accessed for the first time</string>
+  <string>The app needs access to enable you scan QR codes</string>
 
   <!-- Required with iOS 11 and higher: include this only if you are planning to use the camera roll -->
   <key>NSPhotoLibraryAddUsageDescription</key>
-  <string>Your message to user when the photo library is accessed for the first time</string>
+  <string>The app needs access to enable you save QR codes</string>
 
   <!-- Include this only if you are planning to use the camera roll -->
   <key>NSPhotoLibraryUsageDescription</key>
-  <string>Your message to user when the photo library is accessed for the first time</string>
+  <string>The app needs access to enable you save QR codes</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>The app needs access to enable you scan QR codes</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

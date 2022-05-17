@@ -1,4 +1,4 @@
-import {LoginRequest, LoginResponse} from './types';
+import {LoginRequest, LoginResponse, City} from './types';
 import axios from 'axios';
 import {store} from '../../App';
 export const url = 'https://uzinkass.travelticket.uz/api';
@@ -23,5 +23,14 @@ export const requests = {
   cities: {
     getCities: () => axiosInstance.get('/getCities'),
     getRoutes: () => axiosInstance.get('/getRoutes'),
+    getFindRoute: (data: {city: number; region: number; route: number}) =>
+      axiosInstance.get(
+        `findRoute?city=${data.city}&region=${data.region}&route=${data.route}`,
+      ),
+  },
+  order: {
+    overvisit: (id: number) => axiosInstance.get(`/overVisit/${id}`),
+    createOrder: (data: any) => axiosInstance.get(``, data),
+    getByHash: (hash: string) => axios.get(`/getOrderHash?hash=${hash}`),
   },
 };
