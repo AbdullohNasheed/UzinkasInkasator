@@ -25,18 +25,9 @@ export const useCashAcceptanceScreenHook = () => {
         route,
       });
       try {
-        if (p.params.isManual) {
-          const r = await requests.order.overvisit(order.orders[0].id);
-        } else {
-          const {amount, bag, client_id} = order.orders[0];
-          const req = {
-            amount,
-            bag,
-            client_id,
-            date: currentData,
-          };
-          const r = await requests.order.createOrder(req);
-        }
+        const r = await requests.order.overvisit(
+          p.params.pickedOrder?.id || order.orders[0].id,
+        );
       } catch (error) {
         console.log(error);
         console.log(error?.response);
@@ -64,5 +55,6 @@ export const useCashAcceptanceScreenHook = () => {
     currentTime,
     order,
     loading,
+    pickedOrder: p.params?.pickedOrder,
   };
 };

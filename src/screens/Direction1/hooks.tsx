@@ -10,6 +10,7 @@ import {setRoute} from '../../store/slices/routeSlice';
 import {userLoggedOut} from '../../store/slices/userSlice';
 import {CashAcceptanceScreen} from '../CashAcceptance';
 import CashAcceptance from '../CashAcceptance/view';
+import {Direction3OneScreen} from '../Deriction3One';
 import {Direction2Screen} from '../Direction2';
 import {Direction3Screen} from '../Direction3';
 import {Direction4Screen} from '../Direction4';
@@ -41,6 +42,8 @@ export const useDirectionScreenHook = () => {
     const regionName = state.region.items.find(
       e => state.region.value === e.value,
     ).label;
+    console.log(routeNumber, regionName);
+
     dispatch(
       setRoute({
         city: state.city.value,
@@ -134,6 +137,8 @@ export const useDirectionScreenHook = () => {
     try {
       const resCity = await requests.cities.getCities();
       const resRoute = await requests.cities.getRoutes();
+      console.log({res: resCity.data});
+
       setState({
         ...state,
         city: {
@@ -143,6 +148,7 @@ export const useDirectionScreenHook = () => {
             value,
             regions,
           })),
+          value: 1,
         },
         route: {
           ...state.route,
@@ -151,8 +157,18 @@ export const useDirectionScreenHook = () => {
             value,
           })),
         },
+        region: {
+          ...state.region,
+          items: resCity.data[0].regions.map(({id: value, name: label}) => ({
+            label,
+            value,
+          })),
+          value: 2,
+        },
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
   const onLogoutPress = () => {
     dispatch(userLoggedOut());
@@ -179,6 +195,10 @@ export default function DirectionStack() {
       <Stack.Screen name={ROUTES.DIRECTION5} component={Direction5Screen} />
       <Stack.Screen name={ROUTES.DIRECTION6} component={Direction6Screen} />
       <Stack.Screen name={ROUTES.DIRECTION7} component={Direction7Screen} />
+      <Stack.Screen
+        name={ROUTES.DIRECTION3ONE}
+        component={Direction3OneScreen}
+      />
       <Stack.Screen name={ROUTES.CASH} component={CashAcceptanceScreen} />
     </Stack.Navigator>
   );

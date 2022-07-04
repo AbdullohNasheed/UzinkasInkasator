@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
-import { View, Text, Platform, Button, TouchableOpacity } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import {
-    ClockIcon,
-    KalendarIcon,
-    KalendarMiniIcon,
-} from '../../assets/icons/icons';
-import DefaultButton from '../../components/general/DefaultButton';
-import DefaultInput from '../../components/general/DefaultInput';
-import HeaderComponent from '../../components/header/Header';
-import { useDirection6ScreenHook } from './hooks';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import React, { useState } from 'react';
+import { Button, Platform, TouchableOpacity, View } from 'react-native';
+import {
+    ClockIcon, KalendarMiniIcon
+} from '../../assets/icons/icons';
+import { useDirection6ScreenHook } from './hooks';
 
 
 let { onDirection4Press, } = useDirection6ScreenHook();

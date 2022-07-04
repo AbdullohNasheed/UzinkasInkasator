@@ -29,16 +29,17 @@ const LoginView = () => {
             <DefaultInput
               icon={UserIcon}
               placeholder={'Логин'}
-              onChange={handleChange('name')}
+              onChangeText={handleChange('fio')}
               hasError={!!error}
             />
             {error && <Text style={styles.errorText}>{error.message}</Text>}
             <DefaultInput
               icon={InnIcon}
               placeholder="password"
-              onChange={handleChange('password')}
+              onChangeText={handleChange('password')}
               value={state.password}
               hasError={!!error}
+              secureTextEntry={true}
             />
             {error && <Text style={styles.errorText}>{error.message}</Text>}
           </View>

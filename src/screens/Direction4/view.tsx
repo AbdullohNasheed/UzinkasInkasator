@@ -8,8 +8,13 @@ import {CarbonIcon, Xicon} from '../../assets/icons/icons';
 import {Direction4Hook} from './hooks';
 
 const Direction4view = () => {
-  const {route, setModalVisible, modalVisible, toggleVisibleModal} =
-    Direction4Hook();
+  const {
+    route,
+    setModalVisible,
+    modalVisible,
+    toggleVisibleModal,
+    onContinuePress,
+  } = Direction4Hook();
 
   return (
     <View style={styles.container}>
@@ -20,7 +25,8 @@ const Direction4view = () => {
             Банки
           </Text>
         </View>
-        {route.map(e => {
+        {route?.map(e => {
+          console.log(e);
           return (
             <View style={{flexDirection: 'row', marginVertical: 10}}>
               <View
@@ -50,6 +56,7 @@ const Direction4view = () => {
                   marginHorizontal: 15,
                   alignItems: 'center',
                   borderRadius: 10,
+                  justifyContent: 'center',
                 }}>
                 <Text
                   style={{
@@ -62,13 +69,13 @@ const Direction4view = () => {
                 </Text>
               </TouchableOpacity>
               <ReactNativeModal
-                backdropOpacity={0.0}
+                backdropOpacity={0.5}
                 onBackdropPress={() => setModalVisible}
                 isVisible={modalVisible}>
                 <View style={styles.modalContainer}>
                   <View
                     style={{
-                      height: '70%',
+                      height: '35%',
                       paddingHorizontal: 15,
                       backgroundColor: '#181927',
                       borderRadius: 10,
@@ -99,42 +106,20 @@ const Direction4view = () => {
                             {e.name_of_filial}
                           </Text>
                         </View>
-                        <View
-                          style={{
-                            backgroundColor: '#2b2c36',
-                            marginVertical: 10,
-                            paddingVertical: 8,
-                            borderRadius: 6,
-                          }}>
-                          <Text style={styles.dateText}>{e.stir}</Text>
+                        <View style={styles.bankDateBox}>
+                          <Text
+                            style={{
+                              color: 'red',
+                              fontSize: 30,
+                            }}>
+                            {e.active_orders_sum_amount} сум
+                          </Text>
                         </View>
-                        <View
-                          style={{
-                            backgroundColor: '#2b2c36',
-                            marginVertical: 10,
-                            paddingVertical: 8,
-                            borderRadius: 6,
-                          }}>
-                          <Text style={styles.dateText}>{e.created_at}</Text>
-                        </View>
-                        <View
-                          style={{
-                            backgroundColor: '#2b2c36',
-                            marginVertical: 10,
-                            paddingVertical: 8,
-                            borderRadius: 6,
-                          }}>
-                          <Text style={styles.dateText}>{e.updated_at}</Text>
-                        </View>
-                        <View
-                          style={{
-                            backgroundColor: '#2b2c36',
-                            marginVertical: 10,
-                            paddingVertical: 8,
-                            borderRadius: 6,
-                          }}>
-                          <Text style={styles.dateText}>{e.code}</Text>
-                        </View>
+                        <TouchableOpacity
+                          onPress={() => onContinuePress(e)}
+                          style={styles.style1}>
+                          <Text style={styles.style1Text}>Продолжить</Text>
+                        </TouchableOpacity>
                       </ScrollView>
                     </View>
                   </View>
@@ -147,4 +132,5 @@ const Direction4view = () => {
     </View>
   );
 };
+
 export default Direction4view;

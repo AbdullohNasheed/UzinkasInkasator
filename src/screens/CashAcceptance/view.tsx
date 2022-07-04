@@ -20,8 +20,14 @@ import {styles} from './style';
 import {useCashAcceptanceScreenHook} from './hooks';
 
 const CashAcceptance = () => {
-  let {onDirection3Press, loading, currentTime, currentData, order} =
-    useCashAcceptanceScreenHook();
+  let {
+    onDirection3Press,
+    loading,
+    currentTime,
+    currentData,
+    order,
+    pickedOrder,
+  } = useCashAcceptanceScreenHook();
   return (
     <View style={styles.container}>
       <HeaderComponent text={'Визит к клиенту'} />
@@ -49,11 +55,15 @@ const CashAcceptance = () => {
           </View>
           <Text style={styles.textInput}>Сумма</Text>
           <View style={styles.fotterBox}>
-            <Text style={styles.fotterText}>{order?.debt}</Text>
+            <Text style={styles.fotterText}>
+              {pickedOrder?.amount || order?.debt}
+            </Text>
           </View>
           <Text style={styles.textInput}>Номер мешка</Text>
           <View style={styles.fotterBox}>
-            <Text style={styles.fotterText}>{order.number}</Text>
+            <Text style={styles.fotterText}>
+              {pickedOrder?.bag || order.number}
+            </Text>
           </View>
           <Text style={styles.textInput}>Реквезиты банка</Text>
           <View style={styles.fotterBox}>

@@ -1,18 +1,13 @@
-import {useNavigation} from '@react-navigation/core';
-import React, {useState} from 'react';
-import {View} from 'react-native';
-import {useDispatch} from 'react-redux';
-import {requests} from '../../api/requests';
-import {LoginRequest} from '../../api/types';
-import DefaultButton from '../../components/general/DefaultButton';
-import DefaultInput from '../../components/general/DefaultInput';
-import {ROUTES} from '../../navigation/ROUTES';
-import {userLoggedIn} from '../../store/slices/userSlice';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { requests } from '../../api/requests';
+import { LoginRequest } from '../../api/types';
+import { userLoggedIn } from '../../store/slices/userSlice';
 
 export const useLoginScreenData = () => {
   const dispatch = useDispatch();
   const [state, setState] = useState<LoginRequest>({
-    name: '',
+    fio: '',
     password: '',
   });
   const [error, setError] = useState<any>();

@@ -1,13 +1,19 @@
 import React, {useEffect} from 'react';
-import {View, Image, Platform, Dimensions} from 'react-native';
-import {RNCamera} from 'react-native-camera';
+import {Dimensions, Platform, View} from 'react-native';
+import Camera, {BarCodeReadEvent, RNCamera} from 'react-native-camera';
 import {check, PERMISSIONS, request, RESULTS} from 'react-native-permissions';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import DefaultImageBackground from '../../components/general/DefaultImageBackground';
 import {styles} from './style';
+import {requests} from '../../api/requests';
+import {useNavigation, useRoute} from '@react-navigation/native';
+import {ROUTES} from '../../navigation/ROUTES';
+
 const QrKodView = () => {
   const windowWidth = Dimensions.get('window').width;
   const windowHeight = Dimensions.get('window').height;
+
+  const route = useRoute();
+
   const requestPermissions = async () => {
     try {
       const result = await check(PERMISSIONS.IOS.CAMERA);
@@ -41,6 +47,22 @@ const QrKodView = () => {
     requestPermissions();
   }, []);
 
+  const navigation = useNavigation();
+
+  const onQrScan = async (e: BarCodeReadEvent) => {
+    console.log('ONSCAN', e.data);
+    try {
+      const res = await requests.order.getByHash(e.data);
+      console.log(res.data);
+      console.log(route.params);
+
+      navigation.navigate(ROUTES.DIRECTION6, {
+        order: route.params.order,
+        pickedOrder: res.data,
+      });
+    } catch (error) {}
+  };
+
   return (
     <DefaultImageBackground>
       {/* <Image
@@ -50,7 +72,10 @@ const QrKodView = () => {
 
       <View style={styles.qrKodContainer}>
         <View>
-          <RNCamera style={{width: windowWidth, height: windowHeight}} />
+          <RNCamera
+            onBarCodeRead={onQrScan}
+            style={{width: windowWidth, height: windowHeight}}
+          />
         </View>
       </View>
     </DefaultImageBackground>

@@ -1,26 +1,26 @@
-import React, {useState} from 'react';
-import {View, Text, Platform, Button, TouchableOpacity} from 'react-native';
+import {useRoute} from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
+import {Text, TouchableOpacity, View} from 'react-native';
+import DatePicker from 'react-native-date-picker';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import {
   ClockIcon,
-  Icon,
-  KalendarIcon,
   KalendarMiniIcon,
   PencelIcon,
 } from '../../assets/icons/icons';
 import DefaultButton from '../../components/general/DefaultButton';
-import DefaultInput from '../../components/general/DefaultInput';
 import HeaderComponent from '../../components/header/Header';
 import {useDirection6ScreenHook} from './hooks';
 import {styles} from './style';
-import DateTimePicker from '@react-native-community/datetimepicker';
-import DatePicker from 'react-native-date-picker';
 
 const Direction6view = () => {
-  let {onCashPress, currentTime, currentData, order} =
-    useDirection6ScreenHook();
-  // console.log(order);
-
+  let {
+    onCashPress,
+    currentTime,
+    currentData,
+    order,
+    pcikedOrder: pickedOrder,
+  } = useDirection6ScreenHook();
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   const [time, setTime] = useState(new Date());
@@ -57,14 +57,18 @@ const Direction6view = () => {
           <Text style={styles.textInput}>Сумма</Text>
           <View style={styles.fotterBox}>
             <TextInput>
-              <Text style={styles.fotterText}>{order.debt}</Text>
+              <Text style={styles.fotterText}>
+                {pickedOrder?.amount || order.debt}
+              </Text>
             </TextInput>
             <PencelIcon />
           </View>
           <Text style={styles.textInput}>Номер мешка</Text>
           <View style={styles.fotterBox}>
             <TextInput>
-              <Text style={styles.fotterText}>{order.number}</Text>
+              <Text style={styles.fotterText}>
+                {pickedOrder?.bag || order.number}
+              </Text>
             </TextInput>
             <PencelIcon />
           </View>

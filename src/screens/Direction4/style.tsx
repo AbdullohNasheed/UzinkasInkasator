@@ -27,4 +27,17 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  style1: {
+    backgroundColor: '#009899',
+    marginHorizontal: 20,
+    paddingVertical: 15,
+    alignItems: 'center',
+    borderRadius: 10,
+    marginVertical: 30,
+  },
+  style1Text: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
 });

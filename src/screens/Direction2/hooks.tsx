@@ -8,6 +8,7 @@ import {selectRoute} from '../../store/slices/routeSlice';
 export const useDirection2ScreenHook = () => {
   const [loading, setLoading] = useState(true);
   const [route, setRoute] = useState([]);
+  const [banks, setBanks] = useState([]);
   const history = useRoute();
   const data = history.params;
   let navigation = useNavigation();
@@ -18,10 +19,10 @@ export const useDirection2ScreenHook = () => {
   const {routeNumber, regionName: region} = useSelector(selectRoute);
 
   let onDirection4Press = () => {
-    const banks = route.orders.map(e => {
-      return e.bank;
-    });
-    console.log(banks);
+    // const banks = route?.orders?.map(e => {
+    //   return e.bank;
+    // });
+    // console.log(banks);
 
     navigation.navigate(ROUTES.DIRECTION4, {banks});
   };
@@ -34,6 +35,9 @@ export const useDirection2ScreenHook = () => {
         region: data?.region,
         route: data?.route,
       });
+      // console.log({dsa: res.data});
+      let bankRes = await requests.order.getBanks();
+      setBanks(bankRes.data.banks);
       setRoute(res.data);
       setLoading(false);
     } catch (error) {
@@ -53,6 +57,7 @@ export const useDirection2ScreenHook = () => {
     region,
     routeNumber,
     loading,
+    banks,
   };
 };
 

@@ -51,9 +51,9 @@ const Direction5view = () => {
             </Text>
           </View>
           <View style={{alignItems: 'center', marginVertical: 10,}}>
-            <Text style={{fontSize: 16, fontWeight: '400', color: '#616161'}}>
+            {/* <Text style={{fontSize: 16, fontWeight: '400', color: '#616161'}}>
               Посмотреть историю долга
-            </Text>
+            </Text> */}
           </View>
           <View style={{marginTop: 50}}>
             <DefaultButton

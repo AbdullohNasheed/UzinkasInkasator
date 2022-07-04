@@ -30,7 +30,9 @@ export const requests = {
   },
   order: {
     overvisit: (id: number) => axiosInstance.get(`/overVisit/${id}`),
-    createOrder: (data: any) => axiosInstance.get(``, data),
-    getByHash: (hash: string) => axios.get(`/getOrderHash?hash=${hash}`),
+    createOrder: (data: any) => axiosInstance.get(`/createOrder`, data),
+    getByHash: (hash: string) =>
+      axiosInstance.get(`/getOrderHash?hash=${hash}`),
+    getBanks: () => axiosInstance.get('/bank/active'),
   },
 };

@@ -12,6 +12,7 @@ const Direction2view = () => {
     route,
     region,
     routeNumber,
+    banks,
   } = useDirection2ScreenHook();
   return (
     <View style={styles.container}>
@@ -88,7 +89,7 @@ const Direction2view = () => {
                         color: '#fff',
                         fontWeight: 'bold',
                       }}>
-                      Банки ({route?.amount_of_orders})
+                      Банки ({banks?.length})
                     </Text>
                   </View>
                 )}

@@ -8,8 +8,15 @@ export const useDirection3ScreenHook = () => {
   let navigation = useNavigation();
   let route = useRoute();
   let onDirection5Press = item => {
-    navigation.navigate(ROUTES.DIRECTION5, {order: item});
+    console.log(item, route.params);
+
+    navigation.navigate(ROUTES.DIRECTION5, {
+      order: item,
+      orders: route.params.orders,
+    });
   };
+
+  console.log(route.params);
 
   const {routeNumber} = useSelector(selectRoute);
   return {

@@ -11,7 +11,8 @@ export const useDirection6ScreenHook = () => {
   let onCashPress = () => {
     navigation.navigate(ROUTES.CASH, {
       order: route.params.order,
-      isManual: true,
+      isManual: !route.params.pickedOrder,
+      pickedOrder: route.params.pickedOrder,
     });
   };
   useEffect(() => {
@@ -29,5 +30,6 @@ export const useDirection6ScreenHook = () => {
     currentData,
     currentTime,
     order: route.params.order,
+    pcikedOrder: route.params.pickedOrder,
   };
 };

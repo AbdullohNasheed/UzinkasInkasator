@@ -1,5 +1,9 @@
 import React from 'react';
-import {KeyboardAvoidingView, KeyboardTypeOptions} from 'react-native';
+import {
+  KeyboardAvoidingView,
+  KeyboardTypeOptions,
+  TextInputProps,
+} from 'react-native';
 import {
   Dimensions,
   Platform,
@@ -9,21 +13,21 @@ import {
   View,
 } from 'react-native';
 
-export interface DefaultInputProps {
+export interface DefaultInputProps extends TextInputProps {
   placeholder: string;
   icon: (props: any) => JSX.Element;
   keyboardType?: KeyboardTypeOptions;
   value?: string;
-  onChange?: (e: string) => void;
   hasError?: boolean;
 }
 
 const DefaultInput = ({
   icon,
   placeholder,
-  onChange,
+  onChangeText,
   value,
   hasError,
+  ...rest
 }: DefaultInputProps) => {
   let Icon = icon;
   return (
@@ -31,12 +35,12 @@ const DefaultInput = ({
       <View style={[styles.inputContainer, hasError && styles.errorContainer]}>
         <Icon style={styles.iconStyles} fill={hasError ? 'red' : '#009899'} />
         <TextInput
-          keyboardType="default"
           placeholderTextColor={'rgba(62, 62, 62, 1)'}
           placeholder={placeholder}
           style={styles.registerIcon}
-          onChangeText={onChange}
+          onChangeText={onChangeText}
           value={value}
+          {...rest}
         />
       </View>
     </View>
