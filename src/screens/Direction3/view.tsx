@@ -19,8 +19,6 @@ const Direction3view = () => {
             </Text>
           </View>
           {orders?.length > 0 &&
-            orders[0].orders &&
-            orders[0]?.orders?.length > 0 &&
             orders?.map(e => {
               return (
                 <View
@@ -39,20 +37,12 @@ const Direction3view = () => {
                       borderRadius: 10,
                     }}>
                     <Text
-                      style={
-                        e.orders[0]?.status === 1
-                          ? styles.textOne
-                          : styles.textTwoo
-                      }>
-                      {e.name}
+                      style={e.status === 1 ? styles.textOne : styles.textTwoo}>
+                      {e.client.name}
                     </Text>
                     <Text
-                      style={
-                        e.orders[0]?.status === 1
-                          ? styles.textOne
-                          : styles.textTwoo
-                      }>
-                      {e.number}
+                      style={e.status === 1 ? styles.textOne : styles.textTwoo}>
+                      {e.client.number}
                     </Text>
                   </View>
                   <TouchableOpacity
@@ -74,7 +64,7 @@ const Direction3view = () => {
                         color: '#009899',
                         marginVertical: 18,
                       }}>
-                      {e.orders[0]?.status === 1 ? 'Посетить' : 'Открыть'}
+                      {e?.status === 1 ? 'Посетить' : 'Открыть'}
                     </Text>
                   </TouchableOpacity>
                 </View>

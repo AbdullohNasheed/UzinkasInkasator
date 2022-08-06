@@ -14,6 +14,8 @@ const Direction2view = () => {
     routeNumber,
     banks,
   } = useDirection2ScreenHook();
+  console.log(JSON.stringify({route}, null, 4));
+
   return (
     <View style={styles.container}>
       <HeaderComponent
@@ -27,44 +29,40 @@ const Direction2view = () => {
         </View>
         <View style={{marginVertical: 50}}>
           <TouchableOpacity onPress={onDirection3Press} style={styles.box}>
-            {route.length > 0 ? (
-              <></>
-            ) : (
-              <>
-                {loading ? (
-                  <ActivityIndicator size={'large'} />
-                ) : (
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      marginVertical: 35,
-                      alignItems: 'center',
-                      marginHorizontal: 25,
-                    }}>
-                    <UserIconn />
-                    <View style={{flexDirection: 'row', marginHorizontal: 20}}>
-                      <Text
-                        style={{
-                          marginHorizontal: 10,
-                          fontSize: 20,
-                          color: '#fff',
-                          fontWeight: 'bold',
-                        }}>
-                        Заказчики
-                      </Text>
-                      <Text
-                        style={{
-                          fontSize: 20,
-                          color: '#fff',
-                          fontWeight: 'bold',
-                        }}>
-                        ({route?.amount_of_orders})
-                      </Text>
-                    </View>
+            <>
+              {loading ? (
+                <ActivityIndicator size={'large'} />
+              ) : (
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    marginVertical: 35,
+                    alignItems: 'center',
+                    marginHorizontal: 25,
+                  }}>
+                  <UserIconn />
+                  <View style={{flexDirection: 'row', marginHorizontal: 20}}>
+                    <Text
+                      style={{
+                        marginHorizontal: 10,
+                        fontSize: 20,
+                        color: '#fff',
+                        fontWeight: 'bold',
+                      }}>
+                      Заказчики
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: 20,
+                        color: '#fff',
+                        fontWeight: 'bold',
+                      }}>
+                      ({route?.orders?.length})
+                    </Text>
                   </View>
-                )}
-              </>
-            )}
+                </View>
+              )}
+            </>
           </TouchableOpacity>
           <TouchableOpacity onPress={onDirection4Press} style={styles.box}>
             {route.length > 0 ? (

@@ -60,6 +60,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#181926',
     borderRadius: 16,
     marginVertical: 10,
+    paddingRight: 30,
   },
   fotterBoxx: {
     marginHorizontal: 12,

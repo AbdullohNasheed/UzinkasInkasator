@@ -56,7 +56,7 @@ export const useDirectionScreenHook = () => {
     navigation.navigate(ROUTES.DIRECTION2, {
       city: state.city.value,
       region: state.region.value,
-      route: state.route.value,
+      route: routeNumber,
       regionName,
       routeNumber,
     });

@@ -38,7 +38,7 @@ const Direction5view = () => {
                 fontWeight: 'bold',
                 color: '#A92F2F',
               }}>
-              {order.debt}
+              {order.amount}
             </Text>
             <Text
               style={{
@@ -50,7 +50,7 @@ const Direction5view = () => {
               сум
             </Text>
           </View>
-          <View style={{alignItems: 'center', marginVertical: 10,}}>
+          <View style={{alignItems: 'center', marginVertical: 10}}>
             {/* <Text style={{fontSize: 16, fontWeight: '400', color: '#616161'}}>
               Посмотреть историю долга
             </Text> */}

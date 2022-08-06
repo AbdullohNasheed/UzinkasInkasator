@@ -8,8 +8,6 @@ import HeaderComponentOne from '../../components/header/HeaderOne';
 
 const Direction1view = () => {
   let {HomePress, state, changeDropdown, active} = useDirectionScreenHook();
-  console.log({ll: JSON.stringify(state)});
-
   return (
     <View style={styles.container}>
       <HeaderComponentOne text={`Направление `} />

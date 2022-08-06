@@ -51,23 +51,23 @@ const CashAcceptance = () => {
           </View>
           <Text style={styles.textInput}>Организация</Text>
           <View style={styles.fotterBox}>
-            <Text style={styles.fotterText}>{order.name}</Text>
+            <Text style={styles.fotterText}>{order.client.name}</Text>
           </View>
           <Text style={styles.textInput}>Сумма</Text>
           <View style={styles.fotterBox}>
             <Text style={styles.fotterText}>
-              {pickedOrder?.amount || order?.debt}
+              {pickedOrder?.amount || order?.amount}
             </Text>
           </View>
           <Text style={styles.textInput}>Номер мешка</Text>
           <View style={styles.fotterBox}>
             <Text style={styles.fotterText}>
-              {pickedOrder?.bag || order.number}
+              {pickedOrder?.bag || order.client.bag}
             </Text>
           </View>
           <Text style={styles.textInput}>Реквезиты банка</Text>
           <View style={styles.fotterBox}>
-            <Text style={styles.fotterText}>{order?.bank?.name}</Text>
+            <Text style={styles.fotterText}>{order?.client?.bank_account}</Text>
           </View>
           <View style={styles.buttonBox}>
             <TouchableOpacity

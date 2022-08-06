@@ -35,6 +35,8 @@ export const useDirection2ScreenHook = () => {
         region: data?.region,
         route: data?.route,
       });
+      console.log({data});
+
       // console.log({dsa: res.data});
       let bankRes = await requests.order.getBanks();
       setBanks(bankRes.data.banks);
