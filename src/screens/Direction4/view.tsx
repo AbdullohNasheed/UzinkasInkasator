@@ -18,7 +18,7 @@ const Direction4view = () => {
 
   return (
     <View style={styles.container}>
-      <HeaderComponent text="Визит к клиенту" />
+      <HeaderComponent text="Визит к Банки" />
       <View style={styles.DirictionContaienr}>
         <View style={{alignItems: 'center', marginVertical: 25}}>
           <Text style={{fontSize: 19, fontWeight: 'bold', color: '#fff'}}>
