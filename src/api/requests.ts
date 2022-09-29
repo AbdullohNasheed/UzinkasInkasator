@@ -1,7 +1,7 @@
 import {LoginRequest, LoginResponse, City} from './types';
 import axios from 'axios';
 import {store} from '../../App';
-export const url = 'https://uzinkass.travelticket.uz/api';
+export const url = 'http://10.0.57.141/api';
 
 export const axiosInstance = axios.create({
   baseURL: url,

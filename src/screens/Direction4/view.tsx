@@ -14,11 +14,12 @@ const Direction4view = () => {
     modalVisible,
     toggleVisibleModal,
     onContinuePress,
+    visible,
   } = Direction4Hook();
 
   return (
     <View style={styles.container}>
-      <HeaderComponent text="Визит к Банки" />
+      <HeaderComponent text="Визит в Банки" />
       <View style={styles.DirictionContaienr}>
         <View style={{alignItems: 'center', marginVertical: 25}}>
           <Text style={{fontSize: 19, fontWeight: 'bold', color: '#fff'}}>
@@ -48,26 +49,48 @@ const Direction4view = () => {
                   {e.name}
                 </Text>
               </View>
-              <TouchableOpacity
-                onPress={toggleVisibleModal}
-                style={{
-                  flex: 1,
-                  backgroundColor: '#181926',
-                  marginHorizontal: 15,
-                  alignItems: 'center',
-                  borderRadius: 10,
-                  justifyContent: 'center',
-                }}>
-                <Text
+              {visible ? (
+                <TouchableOpacity
+                  onPress={toggleVisibleModal}
                   style={{
-                    fontSize: 16,
-                    fontWeight: 'bold',
-                    color: '#009899',
-                    marginVertical: 18,
+                    flex: 1,
+                    backgroundColor: '#181926',
+                    marginHorizontal: 15,
+                    alignItems: 'center',
+                    borderRadius: 10,
+                    justifyContent: 'center',
                   }}>
-                  Открыть
-                </Text>
-              </TouchableOpacity>
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 'bold',
+                      color: '#009899',
+                      marginVertical: 18,
+                    }}>
+                    Открыть
+                  </Text>
+                </TouchableOpacity>
+              ) : (
+                <View
+                  style={{
+                    flex: 1,
+                    backgroundColor: '#181926',
+                    marginHorizontal: 15,
+                    alignItems: 'center',
+                    borderRadius: 10,
+                    justifyContent: 'center',
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 'bold',
+                      color: '#009899',
+                      marginVertical: 18,
+                    }}>
+                    Посещено
+                  </Text>
+                </View>
+              )}
               <ReactNativeModal
                 backdropOpacity={0.5}
                 onBackdropPress={() => setModalVisible}
@@ -118,7 +141,7 @@ const Direction4view = () => {
                         <TouchableOpacity
                           onPress={() => onContinuePress(e)}
                           style={styles.style1}>
-                          <Text style={styles.style1Text}>Продолжить</Text>
+                          <Text style={styles.style1Text}>Подтвердить</Text>
                         </TouchableOpacity>
                       </ScrollView>
                     </View>
